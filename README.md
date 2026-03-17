@@ -47,13 +47,15 @@ cd "C:\Users\YourName\Downloads\eigenwave_asr_project"
 
 ---
 
-🏗️ Architecture
+## Architecture
 
-<div align="center">
-![EigenWave-ASR Architecture](assets/architecture.png)
-</div>
+Below is the architecture diagram for this project:
 
-> Note: Create folder `assets/` in the repo and add `architecture.png` there. The README will render the image once the file exists.
+![System architecture](./Screenshot%202026-03-17%20124015.png)
+
+*Figure: Project architecture (image provided by repository owner).*
+
+---
 
 ---
 
