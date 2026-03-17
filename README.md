@@ -1,6 +1,6 @@
-<div align="center">
-
 # 🎙️ EigenWave-ASR
+
+<div align="center">
 
 ### A Compact 27.8M Parameter Automatic Speech Recognition System
 
@@ -10,8 +10,6 @@
 [![Parameters](https://img.shields.io/badge/Parameters-27.8M-orange.svg)](#-model-summary)
 
 **Multi-Scale Robin Features** · **Conformer Encoder** · **CTC Decoding** · **KenLM Beam Search**
-
----
 
 *Built for efficient, high-quality speech recognition on consumer hardware.*
 
@@ -39,10 +37,7 @@ test-other	20.67%	16.09%	↓ 22.2%
 💡 KenLM beam search rescoring provides a ~22% relative WER reduction across both test sets.
 
 🏗️ Architecture
-<div align="center"><!-- ╔══════════════════════════════════════════════════════════╗ ║ ║ ║ 📌 PLACE YOUR ARCHITECTURE IMAGE HERE ║ ║ ║ ║ Uncomment and replace the path below: ║ ║ ║ ╚══════════════════════════════════════════════════════════╝ --><!-- ![EigenWave-ASR Architecture](assets/architecture.png) -->
-⬆️ Replace this with your architecture diagram by uncommenting the line above and placing your image in an assets/ folder.
-
-</div>
+<div align="center"><!-- PLACE YOUR ARCHITECTURE IMAGE HERE --><!-- Uncomment the line below and put your image in assets/ folder --><!-- ![EigenWave-ASR Architecture](assets/architecture.png) --></div>
 🧠 Model Summary
 <div align="center">
 text
@@ -58,7 +53,7 @@ text
 └─────────────────────────────────────────────┘
 </div>
 🔬 Robin Learned Coefficients
-The Robin frontend learns scale-specific spectral transformations automatically during training:
+The Robin frontend learns scale-specific spectral transformations automatically during training.
 
 Scale	α (alpha)	β (beta)	γ (gamma)
 Scale 1	0.310	0.582	0.062
@@ -110,7 +105,7 @@ PowerShell
 # KenLM (language model support)
 & "C:\Python311\python.exe" -m pip install kenlm
 <details> <summary>🔧 <b>If KenLM fails to install...</b> (click to expand)</summary><br>
-Option A: Make sure Visual Studio Build Tools are installed:
+Option A: Make sure Visual Studio Build Tools are installed
 
 Download from visualstudio.microsoft.com
 Select "Desktop development with C++"
@@ -154,7 +149,7 @@ Long Audio / Chunked Mode
 PowerShell
 
 & "C:\Python311\python.exe" run.py --lm_dir "kenlm_models" --audio "podcast.wav" --long
-🎵 Note: WAV (16kHz, mono) is the safest format. If MP3 loading fails, convert first — see Troubleshooting.
+🎵 Note: WAV (16kHz, mono) is the safest format. If MP3 loading fails, see Troubleshooting.
 
 📈 Evaluate on LibriSpeech
 Directory Structure
@@ -177,14 +172,15 @@ Run Optuna Search
 PowerShell
 
 & "C:\Python311\python.exe" run.py --tune
-Pre-Optimized Defaults (used when --tune is not specified)
+Pre-Optimized Defaults
+These are used automatically when --tune is not specified:
+
 Parameter	Value
 alpha	0.9268
 beta	0.061
 temperature	0.536
 beam_width	50
 🛠️ All Commands Reference
-<div align="center">
 Task	Command
 Transcribe WAV	python run.py --lm_dir "kenlm_models" --audio "sample.wav"
 Transcribe MP3	python run.py --lm_dir "kenlm_models" --audio "sample.mp3"
@@ -192,7 +188,6 @@ Long audio	python run.py --lm_dir "kenlm_models" --audio "file.wav" --long
 Full evaluation	python run.py --data_dir "data\librispeech"
 Custom checkpoint	python run.py --checkpoint "path\to\model.pt" --audio "sample.wav"
 Optuna tuning	python run.py --tune
-</div>
 🖥️ CPU Inference
 This model is compact enough for real-time CPU inference.
 
@@ -211,11 +206,11 @@ Best input types:
 
 ✅ Audiobooks
 ✅ Spoken English clips
-✅ Interviews & lectures
+✅ Interviews and lectures
 ✅ Your own voice recordings
 ❌ Songs with background music
 </details><details> <summary><b>🔊 MP3 loading fails</b></summary><br>
-Convert MP3 → WAV using ffmpeg:
+Convert MP3 to WAV using ffmpeg:
 
 PowerShell
 
@@ -226,7 +221,7 @@ PowerShell
 
 & "C:\Python311\python.exe" run.py --lm_dir "kenlm_models" --audio "output.wav"
 </details><details> <summary><b>🔧 KenLM won't install</b></summary><br>
-You can still run the model in greedy-only mode. Beam search + LM just improves accuracy. The model works fine without it — you'll get ~8.77% WER on test-clean instead of 6.88%.
+You can still run the model in greedy-only mode. Beam search + LM just improves accuracy. The model works fine without it — you will get ~8.77% WER on test-clean instead of 6.88%.
 
 </details><details> <summary><b>🐍 Python version issues</b></summary><br>
 Python Version	Status
@@ -236,7 +231,7 @@ Python Version	Status
 3.13	❌ KenLM build likely fails
 </details>
 📋 Requirements
-txt
+text
 
 torch>=2.0
 torchaudio>=2.0
@@ -257,16 +252,17 @@ Independent research project on efficient ASR with learnable multi-scale tempora
 ⭐ If this project helped you, consider giving it a star!
 
 </div> ```
-To add your architecture image, do this:
+Copy everything above starting from # 🎙️ EigenWave-ASR all the way to the last </div>. Paste it directly into your README.md file on GitHub.
 
-Create an assets/ folder in your repo
-Put your architecture image there (e.g., architecture.png)
-Find this line in the README and uncomment it:
-Markdown
+For your architecture image:
+
+Create folder assets/ in your repo
+Put your image there as architecture.png
+Find this line in the file:
+text
 
 <!-- ![EigenWave-ASR Architecture](assets/architecture.png) -->
 Change it to:
-
-Markdown
+text
 
 ![EigenWave-ASR Architecture](assets/architecture.png)
